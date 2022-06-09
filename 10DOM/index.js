@@ -1,0 +1,5 @@
+/*Window vs Document
+Window is the main container under which DOM resides.
+Complete Screen including Tabs and other thing comes under Window and other things come under 
+Document.
+Document is the Child of Window. */

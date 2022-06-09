@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      h1 {
+        text-align: center;
+        color: antiquewhite;
+      }
+      .one {
+        height: 200px;
+        background-color: blue;
+        width: 100px;
+        margin-bottom: 20px;
+        text-align: center;
+        margin: 10px auto;
+      }
+      #second {
+        height: 200px;
+        background-color: rgb(136, 255, 0);
+        width: 100px;
+        margin-bottom: 20px;
+        text-align: center;
+        margin: 10px auto;
+      }
+      #third {
+        height: 200px;
+        background-color: rgb(255, 77, 0);
+        text-align: center;
+        width: 100px;
+        margin-bottom: 20px;
+        margin: 10px auto;
+      }
+      #fourth {
+        height: 200px;
+        background-color: rgb(255, 0, 132);
+        text-align: center;
+        width: 100px;
+        margin-bottom: 20px;
+        margin: 10px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Types of Events in JavaScript</h1>
+    <div class="main">
+      <div class="one">
+        <a href="" onclick="alert('First Way of  Writing Event')">Click Me</a>
+      </div>
+      <div id="second"><a href="" onclick="callingFxn()">Click Me</a></div>
+      <div id="third"><a href="">Click Me</a></div>
+      <div id="fourth"><a href="">Click Me</a></div>
+    </div>
+
+    <script>
+      // Seconfd Way
+      const callingFxn = () => {
+        alert("Second Way of Writing Event");
+      };
+
+      // Third Way
+      const thirdWay = document.getElementById("third");
+      thirdWay.onclick = () => {
+        alert("Third Way of Writing Event");
+      };
+
+      // Fourth Way
+      const fourthWay = document.querySelector("#fourth");
+      fourthWay.addEventListener("click", () => {
+        alert("Fourth Way");
+      });
+    </script>
+  </body>
+</html>

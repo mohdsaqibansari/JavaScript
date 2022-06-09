@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgb(28, 3, 64);
+        color: aliceblue;
+      }
+      .box {
+        margin: 100px auto;
+        margin-left: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="box">
+        <label for=""
+          >Your Name :&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;
+        </label>
+        <input type="text" value="user-name" name="" id="ice" />
+        <br />
+        <label for=""
+          >Choose Ice-Cream &nbsp; &nbsp;
+          <select name="icecream" id="icecream" onchange="selectOption()">
+            <option value="">Select One</option>
+            <option value="Chocolate">Chocolate</option>
+            <option value="Vanila">Vanila</option>
+            <option value="Butter-Scotch">Butter-Scotch</option>
+          </select>
+        </label>
+        <p id="result"></p>
+      </div>
+    </div>
+
+    <script>
+      const selectOption = () => {
+        const userName = document.getElementById("ice").value; //Whenever you take data from the
+        //  input
+        // use .value at the end
+        const userChoice = document.getElementById("icecream").value;
+
+        const result = document.getElementById("result");
+        result.innerHTML = ` ${userName} wants ${userChoice} Ice-Cream `;
+      };
+    </script>
+  </body>
+</html>

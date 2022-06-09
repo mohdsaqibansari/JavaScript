@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: rgb(94, 8, 8);
+    }
+    input {
+      background-color: #fff;
+      color: black;
+    }
+    div p {
+      text-align: center;
+      color: #fff;
+    }
+    .effect {
+      margin-left: 600px;
+    }
+    #keys {
+      color: yellowgreen;
+    }
+  </style>
+  <body>
+    <div class="main">
+      <div>
+        <p>
+          A Function is triggered when a user presses a key in the input field.
+        </p>
+        <br />
+        <input type="text" class="effect" onkeypress="keyPress()" />
+        <br />
+        <p id="keys"></p>
+
+        <input
+          type="text"
+          class="effect"
+          onkeydown="KeyDown()"
+          onkeyup="keyUp()"
+        />
+        <br />
+        <p id="keys2"></p>
+      </div>
+    </div>
+
+    <script>
+      const keyPress = () => {
+        document.getElementById(
+          "keys"
+        ).innerHTML = `You pressed ${event.key} and its code is ${event.code}`;
+      };
+
+      const keyDown = () => {
+        document.getElementById("keys2").innerHTML = `Your key is Down`;
+      };
+      const keyUp = () => {
+        document.getElementById("keys2").innerHTML = `Your key is Up`;
+      };
+    </script>
+  </body>
+</html>

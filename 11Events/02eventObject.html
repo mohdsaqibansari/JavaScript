@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: black;
+      color: aliceblue;
+    }
+    .container {
+      height: 100px;
+      width: 200px;
+      background-color: rgb(101, 165, 42);
+      text-align: center;
+      margin: 20px auto;
+      border: 1px solid white;
+      border-radius: 20px;
+    }
+    #event {
+      margin: 20px auto;
+      text-decoration: none;
+    }
+  </style>
+  <body>
+    <h1 style="text-align: center">What is Event Object ?</h1>
+    <div class="container">
+      <a href="" id="one">
+        <span>Event Listeners</span>
+      </a>
+    </div>
+    <script>
+      const eventOne = document.getElementById("one");
+      const checkEvent = () => {
+        alert("Checking Event Listener");
+        console.log(event);
+        console.log(event.target);
+        console.log(event.type);
+      };
+      eventOne.addEventListener("click", checkEvent);
+    </script>
+  </body>
+</html>
