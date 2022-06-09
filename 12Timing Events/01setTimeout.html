@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgb(5, 5, 67);
+        color: antiquewhite;
+      }
+      p {
+        text-align: center;
+      }
+
+      #showMyName {
+        text-align: center;
+      }
+      #btn {
+        text-align: center;
+        background-color: rgb(214, 217, 10);
+        text-transform: uppercase;
+        margin-left: 613px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div>
+        <p>Do you Want to Know my Name ?</p>
+        <p id="showMyName"></p>
+        <br />
+        <button id="btn">Click to Know</button>
+      </div>
+    </div>
+    <script>
+      const showMyName = document.getElementById("showMyName");
+      const clickMe = document.getElementById("btn");
+      const showMe = () => {
+        showMyName.innerHTML = `Loading......`;
+        setTimeout(() => {
+          showMyName.innerHTML = `Ae Kaam Kar Apna`;
+        }, 2000);
+        setTimeout(() => {
+          showMyName.innerHTML = ` `;
+        }, 5000);
+      };
+      clickMe.addEventListener("click", showMe);
+    </script>
+  </body>
+</html>

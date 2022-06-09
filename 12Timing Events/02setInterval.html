@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>TIMER</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <style>
+      body {
+        background-color: rgb(5, 5, 67);
+        color: rgb(12, 11, 10);
+      }
+      p {
+        text-align: center;
+      }
+      .main {
+        height: 300px;
+        width: 300px;
+        background-color: rgb(67, 179, 181);
+        border: 2px solid black;
+        border-radius: 100%;
+        margin: 100px auto;
+      }
+      .box {
+        margin: 100px auto;
+      }
+      #showMyName {
+        text-align: center;
+      }
+      button {
+        border: 2px solid red;
+        border-radius: 12px;
+      }
+      #btn {
+        text-align: center;
+        background-color: rgb(214, 217, 10);
+        text-transform: uppercase;
+        margin-left: 50px;
+        width: 100px;
+      }
+      #btn1 {
+        text-align: center;
+        background-color: rgb(214, 217, 10);
+        text-transform: uppercase;
+        width: 100px;
+      }
+      #btn2 {
+        text-align: center;
+        background-color: rgb(214, 217, 10);
+        text-transform: uppercase;
+        margin: 20px 0 0 100px;
+        width: 100px;
+      }
+      #btn:hover {
+        background-color: rgb(75, 174, 9);
+        cursor: pointer;
+      }
+
+      #btn1:hover {
+        background-color: rgb(75, 174, 9);
+        cursor: pointer;
+      }
+      #btn2:hover {
+        background-color: rgb(75, 174, 9);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="box">
+        <p><strong>T I M E R</strong></p>
+        <p id="showMyName"></p>
+        <br />
+        <button id="btn">Start</button>
+        <button id="btn1">Stop</button>
+        <br />
+        <button id="btn2">Reset</button>
+      </div>
+    </div>
+
+    <script>
+      const showMyName = document.getElementById("showMyName");
+      const start = document.getElementById("btn");
+      const stop = document.getElementById("btn1");
+      const reset = document.getElementById("btn2");
+      let num = 1;
+      let ref;
+      const showNum = () => {
+        document.getElementById("btn").innerHTML = "Resume";
+        ref = setInterval(() => {
+          showMyName.innerHTML = `${num}`;
+          num++;
+        }, 1000);
+      };
+
+      start.addEventListener("click", showNum);
+      start.addEventListener("click", () => {});
+      stop.addEventListener("click", () => {
+        clearInterval(ref);
+      });
+      reset.addEventListener("click", () => {
+        num = 0;
+        showMyName.innerHTML = `${num}`;
+        document.getElementById("btn").innerHTML = "Start";
+      });
+    </script>
+  </body>
+</html>
