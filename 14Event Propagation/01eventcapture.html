@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #main {
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(209, 0, 0);
+        display: grid;
+        place-items: center;
+      }
+      #child {
+        width: 50%;
+        height: 50%;
+        background-color: rgb(18, 191, 46);
+      }
+      #child:hover {
+        cursor: pointer;
+      }
+      #main:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="child"></div>
+    </div>
+  </body>
+  <script>
+    const parent = document.getElementById("main");
+    const child = document.getElementById("child");
+    const parentCall = () => {
+      alert("Parent Div called");
+    };
+    const childCall = () => {
+      alert("Child Div called");
+      event.stopPropagation(); //It will stop Bubbling
+      //That is, it will alert only Child Div not Parent Div
+    };
+
+    // parent.addEventListener("click", parentCall);
+    // child.addEventListener("click", childCall);
+    //By default third argument is false and it will do bubbling(bottom to Top)
+    //If you want top to Bottom then pass true
+    parent.addEventListener("click", parentCall, true);
+    child.addEventListener("click", childCall, true);
+    // By default if nothing is mentioned then there will be bubbling.
+  </script>
+</html>
